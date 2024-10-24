@@ -145,13 +145,13 @@
   }
   
   a {
-    color: #036eb8;
+    color: #fff;
     text-decoration: none;
     background-color: transparent;
   }
   
   a:hover {
-    color: #b33200;
+    color: #fff;
     text-decoration: underline;
   }
   
