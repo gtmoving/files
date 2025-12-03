@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&T国泰搬运服务有限公司 - 联系我们</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .top-bar {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 0.95em;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .card-header .icon {
+            font-size: 2.5em;
+            margin-right: 15px;
+        }
+
+        .card-header h2 {
+            color: #333;
+            font-size: 1.8em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #e8f4f8;
+            transform: translateX(5px);
+        }
+
+        .contact-item .label {
+            font-weight: bold;
+            color: #2c3e50;
+            min-width: 140px;
+            font-size: 1.1em;
+        }
+
+        .contact-item .value {
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .contact-item a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .service-intro {
+            margin-bottom: 25px;
+        }
+
+        .service-intro h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .service-intro ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-intro ul li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .service-intro ul li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.5em;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+
+        .equipment-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+
+        .equipment-list p {
+            color: #555;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 12px 15px;
+            margin: 10px 0;
+            background: white;
+            color: #2c3e50;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: default;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-list li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .service-list li:hover {
+            background: #e8f4f8;
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid #3498db;
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .price-header {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 1.1em;
+        }
+
+        .notice-list {
+            list-style: none;
+        }
+
+        .notice-list li {
+            padding: 15px;
+            margin: 10px 0;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 8px;
+            color: #856404;
+            transition: all 0.3s ease;
+        }
+
+        .notice-list li:hover {
+            background: #fff8dc;
+            transform: translateX(5px);
+        }
+
+        .special-offer {
+            background: #3498db;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-item .label {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部栏 -->
+    <div class="top-bar">
+        <span>📞 647-719-3107</span>
+        <span>💬 微信: zonglam</span>
+        <a href="#">English</a>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>G&T 国泰搬运服务有限公司</h1>
+            <p class="subtitle">专业 · 安全 · 高效 · 365天全年无休</p>
+        </div>
+
+        <div class="content-grid">
+            <!-- 联系方式卡片 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">📞</span>
+                    <h2>联系方式</h2>
+                </div>
+                <div class="contact-item">
+                    <span class="label">📱 手机（国语）:</span>
+                    <span class="value">647-821-0612 小庄</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">🏢 办公室 (English):</span>
+                    <span class="value">647-719-3107 Sara</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">💬 微信号:</span>
+                    <span class="value">zonglam</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">📧 邮箱:</span>
+                    <span class="value">support@gtmoving.ca</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">🌐 官网:</span>
+                    <span class="value"><a href="http://www.gtmoving.ca/cn/info.html" target="_blank">www.gtmoving.ca/cn/info.html</a></span>
+                </div>
+            </div>
+
+            <!-- 服务介绍卡片 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">⭐</span>
+                    <h2>服务介绍</h2>
+                </div>
+                <div class="service-intro">
+                    <h3>服务范围</h3>
+                    <ul>
+                        <li>提供长途、短途搬家服务，所有价格透明并免收一次性费用。</li>
+                        <li>保险保障：公司配置正规商业保险、公共责任保险物流运输险，保障用户安全。</li>
+                        <li>工作时间：365 天全天候服务，节假日照常营业。</li>
+                    </ul>
+                </div>
+                
+                <div class="service-intro">
+                    <h3>专业设备</h3>
+                    <div class="equipment-list">
+                        <p>超过 3000LB 电动升降梯板、专业钢琴框、dolly、货车车辆运输保险等，专门配备防刮搬运毯等。</p>
+                    </div>
+                </div>
+
+                <div class="service-intro">
+                    <h3>员工团队</h3>
+                    <ul>
+                        <li>专业员工上岗掌握搬运技巧，节省时间，提升服务质量。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 业务范围卡片 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">📦</span>
+                    <h2>业务范围</h2>
+                </div>
+                <ul class="service-list">
+                    <li>长途、短途搬家</li>
+                    <li>办公室搬迁</li>
+                    <li>学生搬家</li>
+                    <li>物品配送</li>
+                    <li>专业包装</li>
+                    <li>IKEA 组装拆卸</li>
+                    <li>家具搬运</li>
+                    <li>家电搬运</li>
+                    <li>垃圾清理</li>
+                    <li>提供 1 人/2 人/3 人专业搬运服务</li>
+                    <li>长途接送、机场接送、旅游接送等</li>
+                </ul>
+            </div>
+
+            <!-- 收费标准卡片 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">💰</span>
+                    <h2>车辆配备和收费标准</h2>
+                </div>
+                
+                <div class="price-card">
+                    <div class="price-header">🚐 Mini Van 车型</div>
+                    <div class="price-item">
+                        <span>1人搬运（含车辆）</span>
+                        <span>$60/小时</span>
+                    </div>
+                    <div class="price-item">
+                        <span>2人搬运（含车辆）</span>
+                        <span>$90/小时</span>
+                    </div>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-header">🚛 26尺大车</div>
+                    <div class="price-item">
+                        <span>2人搬运（含车辆）</span>
+                        <span>$100/小时</span>
+                    </div>
+                    <div class="price-item">
+                        <span>3人搬运（含车辆）</span>
+                        <span>$145/小时</span>
+                    </div>
+                    <div class="price-item">
+                        <span>4人搬运（含车辆）</span>
+                        <span>$190/小时</span>
+                    </div>
+                    <div class="price-item">
+                        <span>5人以上大型搬运</span>
+                        <span>另议</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px; padding: 20px; background: #f0f8ff; border-radius: 8px; border-left: 4px solid #3498db;">
+                    <h4 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2em;">💡 起步价说明</h4>
+                    <p style="color: #555; line-height: 1.8; margin: 0;">
+                        2小时起步（超过2小时按每半小时计算，半小时内按半小时计费）+ 空车费（根据路程距离收费）
+                    </p>
+                </div>
+            </div>
+
+            <!-- 搬运须知卡片 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">⚠️</span>
+                    <h2>搬运须知</h2>
+                </div>
+                <ul class="notice-list">
+                    <li><strong>1.</strong> 搬运计费从车到指定地点后开始计时，超过2小时后按半小时计算。</li>
+                    <li><strong>2.</strong> 若搬运物品较重（如钢琴、玻璃柜、大理石台面等超过200磅），需提前告知，可能会增加额外搬运费用。</li>
+                    <li><strong>3.</strong> 如需拆卸安装家具（如床架、沙发、洗衣机等），请提前告知，提供免费拆卸装服务。</li>
+                    <li><strong>4.</strong> 搬家当天请提前准备好打包好和半预期物品，需额外收取的请提前告知购买。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 特殊优惠 -->
+        <div class="special-offer">
+            🎉 特殊优惠：新老人院搬家一律 8.8 折优惠！🎉
+        </div>
+    </div>
+</body>
+</html>
